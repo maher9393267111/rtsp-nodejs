@@ -2,6 +2,7 @@ const videoStream = require('./index');
 let express = require('express');
 let path = require('path');
 let app = express();
+const findRemoveSync = require('find-remove')
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'videos')));
@@ -27,8 +28,14 @@ const options = {
         'ultrafast':undefined // single option other than the key-value type, it can be set by setting the value to undefined.
     },
 }
-const stream = new videoStream(options);
-stream.start();
+//const stream = new videoStream(options);
+//stream.start();
+
+
+
+
+
+
 
 
 app.listen(3000);

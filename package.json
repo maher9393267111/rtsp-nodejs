@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "find-remove": "^4.1.0",
     "node-rtsp-stream": "^0.0.9",
     "nodemon": "^2.0.22"
   }
