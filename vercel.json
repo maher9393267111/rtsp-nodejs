@@ -2,7 +2,7 @@
     "version": 2,
     "builds":[
         {
-            "src": "./VideStream.js",
+            "src": "VideStream.js",
             "use": "@vercel/node"
         }
     ],
