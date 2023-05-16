@@ -8,6 +8,11 @@ app.use(express.static(path.join(__dirname, 'videos')));
 
 
 app.get('/', function(req, res, next) {
+    res.status(200).json('server work successfully')
+  //  res.sendFile(__dirname+'/index.html');
+});
+
+app.get('/stream', function(req, res, next) {
     res.sendFile(__dirname+'/index.html');
 });
 
