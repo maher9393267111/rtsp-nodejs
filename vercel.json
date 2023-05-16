@@ -2,14 +2,14 @@
     "version": 2,
     "builds":[
         {
-            "src": "./examples/VideStream.js",
+            "src": "./VideStream.js",
             "use": "@vercel/node"
         }
     ],
     "routes":[
         {
             "src": "/(.*)",
-            "dest": "./examples/VideStream.js"
+            "dest": "VideStream.js"
         }
     ]
       
