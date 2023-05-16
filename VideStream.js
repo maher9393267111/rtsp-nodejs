@@ -2,7 +2,8 @@ const videoStream = require('./index');
 let express = require('express');
 let path = require('path');
 let app = express();
-const findRemoveSync = require('find-remove')
+
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'videos')));
@@ -32,7 +33,23 @@ const stream = new videoStream(options);
 stream.start();
 
 
+const deleteFiles =function(){
 
+
+    (function() {
+
+        setInterval(() => {
+           var result = findRemoveSync('./videos', { age: { seconds: 30 }, extensions: '.ts' });
+           console.log(result);
+      }, 50000);
+    
+      console.log('removeed Files')
+    
+     })()
+
+}
+
+deleteFiles()
 
 
 

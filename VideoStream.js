@@ -1,5 +1,7 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
+const ffmpegInstaller = require('@ffmpeg-installer/ffmpeg')
+const findRemoveSync = require('find-remove')
 
 class VideoStream {
     constructor(options) {
@@ -26,10 +28,19 @@ class VideoStream {
         if (!fs.existsSync(this.segmentFolder)) {
             fs.mkdirSync(this.segmentFolder);
         }
-        const ffmpeg = spawn('ffmpeg', this.options);
+        const ffmpeg = spawn(
+          //  'ffmpeg'
+          ffmpegInstaller.path
+            , this.options);
         ffmpeg.stderr.on('data', (data) => {
             console.error(`stderr: ${data}`);
+
+       
+
+
         });
+
+     
 
         ffmpeg.on('close', (code) => {
             console.log(`ffmpeg process closed with code ${code}`);
@@ -42,6 +53,11 @@ class VideoStream {
         return this.segmentFolder();
     }
 
+
+
+
+
+    
     #addffmpegOptions(ffmpegOptions) {
         for (const key in ffmpegOptions) {
             if (!this.options.includes(key)) {
