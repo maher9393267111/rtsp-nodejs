@@ -9,7 +9,7 @@
     "routes":[
         {
             "src": "/(.*)",
-            "dest": "examples/VideStream.js"
+            "dest": "./examples/VideStream.js"
         }
     ]
       
