@@ -2,6 +2,7 @@ const videoStream = require('./index');
 let express = require('express');
 let path = require('path');
 let app = express();
+const findRemoveSync = require('find-remove')
 
 
 
