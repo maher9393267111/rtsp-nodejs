@@ -28,8 +28,8 @@ const options = {
         'ultrafast':undefined // single option other than the key-value type, it can be set by setting the value to undefined.
     },
 }
-//const stream = new videoStream(options);
-//stream.start();
+const stream = new videoStream(options);
+stream.start();
 
 
 
